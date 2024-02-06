@@ -13,7 +13,7 @@ import { ProverX, ProverProofX } from './zkprogram';
 
 export async function readProofFromFileAndVerify() {
     try {
-        const { verificationKey: ProverX_VK } = await ProverX.compile();
+        const { verificationKey: ProverX_VK } = await ProverX.compile({ forceRecompile: true });
         console.log('ProverX_VK: ' + ProverX_VK.hash);
 
         // read from file
